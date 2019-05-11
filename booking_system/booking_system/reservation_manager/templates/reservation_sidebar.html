@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<div class="container-fluid sidebar col-lg-4 p-0 m-0 affix">
+        <div class="panel-group accordian-wrap" id="accordion" role="tablist" aria-multiselectable="true">
+
+{% for category,instruments in instr_cat_dict.items %}      
+                
+                <div class="panel">
+                        <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{category}}" aria-expanded="true" aria-controls="collapseOne">
+                                        {{category}} 
+                                        </a>
+                                </h4>   
+                        </div>
+                </div>
+
+
+                <div id="{{category}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        {%for instrument in instruments%}
+                        <div class="panel-body"> 
+                                <div class=" instrument row ">
+                                        {% if instrument.under_maintenance %}
+                                        <div class=" instrument-name col-12 ">
+                                                <a class="instrument-link-disabled text-muted" href="">
+                                                {{instrument.instrument_name}} under maintenance
+                                                </a>
+                                        </div>
+        
+                                        {% else %}
+                                        <div class="instrument-name col-8 ">
+                                                <a class="instrument-link"  href="{{instrument.instrument_id}}">
+                                                {{instrument.instrument_name}}
+                                                </a>
+                                        </div>
+                                        <div class="instrument-info col-4 ">
+                                                <a class="instrument-info-link" href="{{instrument.instrument_id}}/info" data-popup-url="{% url "instr_info_modal" instr_id=instrument.instrument_id %}" data-popup-title="{{instrument.instrument_name}}">
+                                                        <img class="instrument-info-img" border="0" alt="info" src="/static/img/info.svg">
+                                                </a>
+                                        </div>        
+                                        {% endif %}
+                                </div>                     
+                                
+                        </div>     
+                        {%endfor%}                
+                </div>     
+        {%endfor%} 
+        </div>       
+</div>
+

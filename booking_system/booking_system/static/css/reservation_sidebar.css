@@ -1,0 +1,196 @@
+h3 {
+color: #fff;
+font-size: 24px;
+text-align: center;
+margin-top: 30px;
+border-bottom: 1px solid #eee;
+font-weight: 300;
+}     
+
+.sidebar{
+        background: #eee;
+        height: 100vh;
+}
+
+.panel {
+border-width: 0 0 0 0;
+border-style: solid;
+border-color: #fff;
+background: none;
+box-shadow: none;
+}
+        
+.panel:last-child {
+border-bottom: none;
+}
+
+.panel-group .panel {
+border-radius: 0;
+}
+
+.panel-group .panel + .panel {
+margin-top: 0;
+}
+
+.panel-heading {
+background-color: #161616;
+border-radius: 0px;
+border: none;
+color: #fff;
+padding: 0;
+max-width: 250px;
+}
+
+.panel-title{
+        margin-bottom: 0px;
+        text-align: center;
+}
+
+.panel-title:hover{
+        cursor: pointer;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-left-color: rgb(255, 255, 255);
+        border-right-color: rgb(255, 255, 255);
+        border-left-width: 1px;
+        border-right-width: 1px;
+        background: rgb(117, 117, 117);
+}
+
+.panel-title a {
+display: block;
+color: #fff;
+padding: 15px;
+position: relative;
+font-size: 16px;
+font-weight: 400;
+}
+
+.panel-title a:hover {
+        outline: 0;
+        text-decoration: none;
+        }
+
+.panel-body{
+        background: white;
+        border-right-style: solid;
+        border-left-style: solid;
+        border-bottom-style: solid;
+        border-bottom-color: #ebebeb;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-right-width: 1px;
+}
+
+.panel-body a{
+        color: black;
+        font-family: Arial;
+        font-size: 16px;
+}
+
+.panel-body a:hover{
+        outline: 0;
+        text-decoration: none;
+}
+
+.panel-body:hover{
+        cursor: pointer;
+        background: rgb(173, 173, 173);
+}
+
+.panel:last-child .panel-body {
+border-radius: 0 0 4px 4px;
+border-bottom-style: solid;
+border-bottom: 1px;
+border-color: rgb(92, 92, 92);
+}
+
+
+.panel:last-child .panel-heading {
+border-radius: 0 0 4px 4px;
+transition: border-radius 0.3s linear 0.2s;
+}
+
+.panel:last-child .panel-heading.active {
+border-radius: 0;
+transition: border-radius linear 0s;
+}
+
+/* instrument links */
+
+.instrument{
+        width: 250px;
+        height: 50px;
+        max-width: 300px;
+        margin: 0px;
+}
+.instrument-name{
+        height: 50px;
+        padding:10px;
+        border-right-style: solid;
+        border-right:1px;
+        border-right-color: black;
+        text-align: center;
+        vertical-align: middle;
+}
+
+.instrument-info{
+        vertical-align: middle;
+        height: 50px;
+        padding:5px;
+        margin: 0px;
+}
+
+.instrument-info:hover{
+        background: rgba(226, 226, 226, 0.2);
+}
+
+.instrument-link-disabled{
+        pointer-events: none;
+        cursor: default;
+}
+
+.instrument-info-img{
+        position: absolute;
+        margin: auto;
+        padding: 0px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        widows: 20px;
+        height: 20px;
+}
+
+
+/* #accordion rotate icon option */
+
+#accordion .panel-heading a:before {
+font-size: 24px;
+position: absolute;
+font-family: 'Material Icons';
+right: 5px;
+top: 10px;
+transform: rotate(180deg);
+transition: all 0.5s;
+}
+
+#accordion .panel-heading.active a:before {
+transform: rotate(0deg);
+transition: all 0.5s;
+}
+
+
+/* Reservation window */
+
+.shadow {
+-moz-box-shadow:    inset 0 0 10px #000000;
+-webkit-box-shadow: inset 0 0 10px #000000;
+box-shadow:         inset 0 0 10px #000000;
+}
+
+
+.reservation-window{
+        height: 90vh;
+        background: rgb(235, 235, 235);
+}

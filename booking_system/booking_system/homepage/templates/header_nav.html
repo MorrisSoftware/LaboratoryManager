@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<nav class="navbar navbar-custom navbar-expand-md navbar-dark bg-custom"> 
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'home' %}">
+          Protein Structure-Function Research Unit
+      </a>
+    </div>
+
+    <div class="navbar-collapse">
+
+      <ul class="navbar-nav">
+        <li>
+            <a class="nav-item nav-link" href="{% url 'instr_reservation'%}">Reservation</a>
+        </li>
+        <li>
+            <a class="nav-item nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-lg-auto mr-lg-0">
+        {% if user.is_authenticated %}
+        <li>
+            <a id="navbar-username" class="nav-item nav-link disabled">Welcome: {{user.username}}</a>
+        </li>
+        {% if user.is_staff %}
+        <li>
+            <a class='nav-item nav-link' href="/admin/homepage/request">Messages <span id="nummessages"></span></a>
+        </li>
+        <li>
+                <a class='nav-item nav-link' href="/admin">Admin Site</a>
+        </li>
+        {% endif %}
+        <li>
+            <a class='nav-item nav-link' href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li>
+            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %} 
+      </ul>
+
+    </div>
+    </div>
+</nav>        

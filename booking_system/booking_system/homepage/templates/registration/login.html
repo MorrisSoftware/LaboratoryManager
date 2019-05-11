@@ -1,0 +1,54 @@
+{% extends "homepage.html" %}
+
+{% block stylesheet %}
+{%load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" >
+{%endblock%}
+
+{% block content %}
+<div class="body-container">
+    <div class="container-fluid">
+        {% if form.errors %}
+        <p class="alert alert-danger">Your username and password didn't match. Please try again.</p>
+        {% endif %}
+        
+
+        
+            <form class=" login-form" method="post" action="{% url 'login' %}">
+              <div class="form-group">
+
+                {% if next %}
+                <p class="login-form-text">Please login to see this page.</p>
+                {% endif %}
+                
+                {% csrf_token %}
+
+                <div class="form input" id="usernamefield">
+                  <p class="form-label">
+                    Username
+                  </p>
+                  {{ form.username }}
+                </div>
+
+                <div>
+                    
+                  <div class="form input" id="passwordfield">
+                      <p class="form-label">
+                        Password
+                      </p>
+                    {{ form.password }}
+                  </div>
+
+                
+                <div>
+                  <input id="btn-login" class="btn btn-primary" type="submit" value="login" />
+                  <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+
+                <p class="message">Not registered? <a href="{% url 'contact' %}">Contact administrator</a></p>
+              </div>
+            </form>
+        </div>
+      </div>    
+{% endblock %}
+

@@ -1,0 +1,43 @@
+<div>
+    <div>
+            <h5 class="text-center mr-3 mt-2 ml-2">
+                    {{instrument.instrument_name}}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            &times;
+                    </button>
+            </h5>
+    </div> 
+</div>   
+
+<div>
+        <p>
+            <img class="img-thumbnail mx-auto d-block instrument-image" src="{{instrument.image.url}}" alt="{{ instrument.instrument_name}}"/>
+        </p>
+</div>
+
+
+<div class="instrument-info-body">
+    <h6 class="text-center">Instrument information</h6>
+    <div>
+            <h6 class="instrument-info-key">Model:</h6>
+            <p class="instrument-info-value">{{instrument.model}}</p>
+                    
+    </div>     
+    <div>
+            <h6 class="instrument-info-key">Manufacturer:</h6>
+            <p class="instrument-info-value">{{instrument.manufacturer}}</p>
+                    
+    </div>  
+    <div>
+            <h6 class="instrument-info-key">Year of manufacture:</h6>
+            <p class="instrument-info-value">{{ instrument.year|date:"Y" }}</p>
+                    
+    </div>    
+    <div>
+            <h6 class="instrument-info-key">Location:</h6>
+            <p class="instrument-info-value">{{instrument.location}}</p>
+                    
+    </div>       
+
+</div>
+

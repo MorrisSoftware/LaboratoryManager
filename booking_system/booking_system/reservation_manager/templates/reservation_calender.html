@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<div class="reservation-calender-content container-fluid col-lg-8">
+        <div class="row">
+                <div id="calender-header" class="noselect col-6">
+                        <h6 id="instr-tag">{{instr_name}}</h6>
+                        <h6 id="month-tag"></h6>
+                </div>
+                <div id="calender-header" class="col-6">
+                        <button id="btn-week-next" class="btn btn-dark">>>></button>
+                        <button id="btn-week-prev" class="btn btn-dark"><<<</button>     
+                </div>
+        </div>  
+        
+        {% if instr_name != "Please select an instrument"%}
+        <div id="reservation-titlebar" class="row">
+                <div class=" titlebar-label-div noselect col-1 p-0">
+                        <h6 class="titlebar-label">Time</h6>
+                </div>
+                {% for day in number_of_days %}
+                <div class="titlebar-label-div titlebar-label-date noselect col p-0">
+                                <h6 id="date-day-label-{{day}}" class="titlebar-label"></h6>
+                </div>
+                {%endfor%}
+        </div>
+        <div id="reservation-table" class="row">
+                <div id="reservation-cells-timecol" class="col-1 p-0">
+                        {% for time in times %}
+                        <div id="time-{{time}}" class="titlebar-label-time reservation-table-cell noselect row m-0">
+                                <h6>{{time}}</h6> 
+                        </div>
+                        {%endfor%}
+                </div>
+                <div id="reservation-cells-slots" class="col row">
+                        {% for day in number_of_days %}
+                        <div id="day-{{day}}" class="col-date col p-0">
+                                {% for time in times %}
+                                <div id="{{day}}-{{time}}" class="reservation-table-cell noselect row m-0 ">
+                                       <div id="{{time}}" class="time-slot">
+                                               
+                                       </div> 
+                                </div>
+                                {%endfor%}
+                        </div>
+                        {%endfor%}
+                </div>
+                        
+        </div>
+        {%endif%}
+</div>
+

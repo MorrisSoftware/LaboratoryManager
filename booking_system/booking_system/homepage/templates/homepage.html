@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head> 
+    {% load static %} 
+
+    {% block base_stylesheet %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" >
+    {% endblock %}
+
+    {% block stylesheet %}
+    {%endblock %}
+
+    {% block base_js %}
+    <script type="text/javascript"  src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript"  src="{% static 'js/bootstrap.js'%}"></script>
+    <script type="text/javascript"  src="{% static 'js/custom.js'%}"></script>
+
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+
+    {% block title %}
+    <title>PSFRU</title>
+    {% endblock %}
+  </head>
+
+  <body style="background-image: url(media/{{settings.background_image}});background-size: auto; background-padding: 5px;">
+    <header>
+        {% block navbar %}
+          {% include "header_nav.html" %}
+        {% endblock %}
+    </header>
+        
+
+    <main role="main" class="container-fluid p-0 m-0"> 
+      <div class="row">
+          {% block sidebar %}
+          {% endblock %}
+          {% block content %}
+          {% endblock %}
+          {% block extrabody %}
+          {% endblock %}
+      </div>
+    </main>
+
+
+    <footer class="footer">
+      {% block footer_nav %}
+        {% include "footer_nav.html" %}
+      {% endblock %}
+    </footer>
+  </body>
+</html>

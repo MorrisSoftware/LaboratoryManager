@@ -1,0 +1,144 @@
+.reservation-calender-content{
+    margin: 2px 0px 0px 2px;
+}
+
+/* reservation table header CSS*/
+#calender-header{
+    width: 100%;
+    background:  #000000;
+    color: aliceblue;
+    padding: 5px;
+}
+
+#month-tag{
+    display: inline;
+    margin:2px;
+    text-align: center;
+    float:left;
+}
+
+#btn-week-prev{
+    margin:2px;
+    float: right;
+}
+
+#btn-week-next{
+    margin:2px;
+    float: right;
+}
+
+.titlebar-label-div{
+    background-color:  #252525;
+    text-align: center;
+    border-width: 1px;
+    border-color: darkgray;
+    border-style: solid;
+}
+
+.titlebar-label{
+    color: white;
+}
+
+/* reservation table CSS*/
+#reservation-table-container{
+    width: 100%;
+}
+
+.col-date{
+    height: 720px;
+}
+
+#reservation-cells{
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.reservation-table-cell{
+    text-align: center;
+    height: 30px;
+    border-left: 0.5px;
+    border-right: 0.5px;
+    border-bottom: 0.5px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-color: darkgray;
+    border-right-color: darkgray;
+    border-bottom-color: darkgray;
+}
+
+.time-slot{
+    width: 20%;
+    height: 20%;
+    padding: 2px;
+    margin: auto;
+}
+
+.reservation-table-cell-date:hover{
+    background-color: rgba(169, 169, 169, 0.411);
+}
+
+.reservation-table-cell-date:active{
+    background-color: rgba(114, 114, 114, 0.411);
+}
+
+.reservation-cells-timecol{
+    width: 100px;
+}
+
+.titlebar-label-time{
+    padding: 2px;
+    background-color: #474747;
+    color: rgb(255, 255, 255);
+}
+
+.selected{
+    background-color: #474747;
+}
+
+/* Reservation divs */
+.reservation-date{
+    z-index: 1;
+    border-left: 1px;
+    border-right: 1px;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    background: blueviolet;
+}
+
+.reservation-time{
+    height: 30px;
+}
+
+
+/* general CSS*/
+
+.noselect{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}
+
+/* Reservation events */
+.reservation-user-label{
+    color: white;
+    font: arial, sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+
+

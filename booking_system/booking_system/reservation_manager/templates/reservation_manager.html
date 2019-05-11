@@ -1,0 +1,40 @@
+{% extends "./homepage.html" %}
+{$ load i18n %}
+{%load static%}
+{% csrf_token %}
+{% block stylesheet%}
+<link rel="stylesheet" href="{% static 'css/reservation_sidebar.css' %}" >
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/reservation_calender.css' %}" >
+<link rel="stylesheet" href="{% static 'css/instr_info_modal.css' %}">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+{%endblock%}
+
+{% block js %}
+{{block.super}}
+<script type="text/javascript" src="{% static 'js/moment.min.js' %}"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="{% static 'js/instr_info_modal.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/reservation_calender.js' %}"></script>
+{% endblock %}
+
+<div class="row">
+{% block sidebar %}
+    {% include "reservation_sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+    {% include "reservation_calender.html"%}
+{% endblock %}
+</div>
+{% block extrabody %}
+<div id="instr-info-modal" class="modal fade">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body p-0 m-0">
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
